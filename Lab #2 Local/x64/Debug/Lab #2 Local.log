@@ -1,4 +1,2 @@
 ﻿  1 задание.cpp
-C:\Users\evgex\source\repos\Lab-2\Lab (18,16): warning C4311: '<function-style-cast>': pointer truncation from 'int [][16]' to 'int'
-C:\Users\evgex\source\repos\Lab-2\Lab (18,16): warning C4302: '<function-style-cast>': truncation from 'int [][16]' to 'int'
-  Lab #2 Local.vcxproj -> C:\Users\evgex\source\repos\Lab-2\x64\Debug\Lab #2 Local.exe
+  Lab #2 Local.vcxproj -> C:\Users\evgex\Source\Repos\Lab-2\x64\Debug\Lab #2 Local.exe
