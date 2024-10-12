@@ -4,18 +4,18 @@
 #include <conio.h>
 
 
-int funcinp(int s,int st,int matrix[16][16])
+int funcinp(int s, int st, int matrix[16][16])
 {
-        printf("\nВведите значение элемента матрицы с индексом [%d][%d] - ", s + 1, st + 1);
+    printf("\nВведите значение элемента матрицы с индексом [%d][%d] - ", s + 1, st + 1);
 
-        while ((scanf_s("%d", &matrix[s][st]) != 1))
-        {
-            printf("\nНеверный ввод повторите попытку заново!(Вводите целые числа)");
-            printf("\n");
-            exit(1);
-        }
+    while ((scanf_s("%d", &matrix[s][st]) != 1))
+    {
+        printf("\nНеверный ввод повторите попытку заново!(Вводите целые числа)");
+        printf("\n");
+        exit(1);
+    }
 
-    return (int (matrix));
+    return (int(matrix));
 }
 
 int main()
@@ -35,7 +35,7 @@ int main()
     if (p <= 0) { printf("Такой матрицы не существует"); return 0; }
     else if (p == 1) { printf("Определитель данной матрицы, само число, подсчет не имеет смысла"); return 0; }
     else if (p > 5) { printf("Программа рассчитана на подсчет определителей матриц не выше 5 порядка"); return 0; }
-    
+
 
     if (p > 0)
     {
@@ -45,11 +45,11 @@ int main()
                 /*printf("Введите значение элемента матрицы с индексом [%d][%d] - ", s + 1, st + 1);
                 scanf_s("%d", &matrix[s][st]);*/
                 funcinp(s, st, matrix);
-                
-  
+
+
             }
         printf("Полученная матрица\n");
-        
+
         printf("|\n");
         printf("V\n");
 
