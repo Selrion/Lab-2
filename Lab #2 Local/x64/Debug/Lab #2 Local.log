@@ -1,2 +1,4 @@
 ﻿  1 задание.cpp
+C:\Users\evgex\source\repos\Lab-2\Lab (24,39): warning C4566: character represented by universal-character-name '\u200B' cannot be represented in the current code page (1251)
+C:\Users\evgex\source\repos\Lab-2\Lab (83,1): warning C4715: 'task_1': not all control paths return a value
   Lab #2 Local.vcxproj -> C:\Users\evgex\Source\Repos\Lab-2\x64\Debug\Lab #2 Local.exe
