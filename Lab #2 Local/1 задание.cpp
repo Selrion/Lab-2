@@ -11,15 +11,16 @@ int task_1()
     int sumgl = 0;
     int sumvt = 0;
     int matrix[4][4];
+
    while(b)
    {
        printf("\nInput size of matrix: ");
 
-       if (scanf_s("%d", &matrixsize) != 1) { rewind(stdin); printf("Wrong type of data!"); }
-       else if (matrixsize <= 0) { rewind(stdin); printf("\nNo such matrix exists");  }
-       else if (matrixsize == 1) { rewind(stdin); printf("The determinant of this matrix is ​​equal to the number itself");  }
-       else if (matrixsize > 4) { rewind(stdin); printf("This programm can't calculate this");  } // fix!
-       else { printf("\nInput matrix with size of %d:\n", matrixsize); }
+       if (scanf_s("%d", &matrixsize) != 1) { printf("Wrong type of data!"); return 0; }
+       if (matrixsize <= 0) {rewind(stdin); printf("\nNo such matrix exists");}
+       if (matrixsize == 1) {printf("The determinant of this matrix equals itself"); return 0; }
+       if (matrixsize > 4) { printf("This programm can't calculate this"); return 0; } // fix!
+       else { printf("\nInput matrix with size of %d:\n", matrixsize);}
 
        for (line = 0; line < matrixsize; line++)
        {
@@ -87,7 +88,7 @@ int task_1()
 
            printf("Matrix determinant size of %d = %d", matrixsize, determ);
 
-           printf("\nFor continue press 1, for exit 0 - ");
+           printf("\nFor continue - 1, for exit - 0:  ");
            scanf_s("%d", &b);
        }
 
@@ -98,12 +99,23 @@ int task_1()
 
 int main()
 {
+    
     while (1)
     {
         rewind(stdin);
-        rewind(stdout);
-        puts("\nTo continue task 1 press '1':");
-        if (getc(stdin) == '1') 
+        int ts;
+        char tasks[] = 
+            "\n"
+            "\nPlease choose a task:"
+            "\n"
+            "\nTask 1 - '1'"
+            "\nTask 2 - '2'"
+            "\nExit - '0'"
+            "\n"
+            "\nEnter: ";
+        printf("%s",tasks);
+        scanf_s("%d",&ts);
+        if (ts == 1) 
         {
             task_1();
         }
