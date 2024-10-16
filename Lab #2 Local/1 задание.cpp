@@ -14,7 +14,6 @@ int task_1()
         printf("Input size of matrix: ");
         scanf_s("%d", &matrixsize);
 
-        if (scanf_s("%d", &matrixsize) != 1) {printf("Wrong type of data!"); exit(1);}
         if (matrixsize <= 0) { printf("No such matrix exists"); return 0; }
         if (matrixsize == 1) { printf("The determinant of this matrix is ​​equal to the number itself"); return 0; }
         if (matrixsize > 5) { printf("This programm can't calculate this"); return 0; }
@@ -75,15 +74,7 @@ int task_1()
 
         printf("Matrix determinant size of %d = %d", matrixsize, determ);
     }
-    if (matrixsize == 4)
-    {
-        for (line = 0; line < matrixsize; line++)
-            for (column = 0; column < matrixsize; column++)
-            {
-                sumgl = matrix[0][0];
-            }
-
-    }
+    
 }
 
 int main()
