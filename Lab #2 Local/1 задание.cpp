@@ -12,29 +12,33 @@ int task_1()
     int matrix[4][4];
    
         printf("Input size of matrix: ");
-        scanf_s("%d", &matrixsize);
 
-        if (matrixsize <= 0) { printf("No such matrix exists"); return 0; }
+        if (scanf_s("%d", &matrixsize) != 1) {rewind(stdin); printf("Wrong type of data!");}
+        else {printf("\nInput matrix size of %d:\n", matrixsize);}
+        if (matrixsize == 0) { printf("\nNo such matrix exists"); return 0; }
         if (matrixsize == 1) { printf("The determinant of this matrix is ​​equal to the number itself"); return 0; }
         if (matrixsize > 5) { printf("This programm can't calculate this"); return 0; }
         
 
-        printf("Input matrix size of %d:\n", matrixsize);
-
         for (line = 0; line < matrixsize; line++)
+        {
             for (column = 0; column < matrixsize; column++)
             {
-                if (scanf_s("%d", &matrix[line][column]) != 1)
+                int n = scanf_s("%d", &matrix[line][column]);
+                if (n!=1)
                 {
-                    printf("Wrong type of data!");
+                    printf("\nWrong type of data!");
                     exit(1);
                 }
             }
-        
+        }
+       
 
 
     if (matrixsize == 2)
     {
+      
+       
         for (line = 0; line < matrixsize; line++)
             for (column = 0; column < matrixsize; column++)
             {
@@ -49,10 +53,12 @@ int task_1()
                 }
             }
         determ = sumgl - sumvt;
-        printf("Matrix determinant size of %d = %d", matrixsize, determ);
+        printf("\nMatrix determinant size of %d = %d", matrixsize, determ);
     }
+ 
+    
 
-    if (matrixsize == 3)
+    if (matrixsize == 3 && scanf_s("%d", &matrix[line][column]) == 1)
     {
         for (line = 0; line < matrixsize; line++)
             for (column = 0; column < matrixsize; column++)
@@ -82,6 +88,7 @@ int main()
     while (1)
     {
         rewind(stdin);
+        rewind(stdout);
         puts("\nTo continue task 1 press '1':");
         if (getc(stdin) == '1') 
         {
