@@ -16,23 +16,25 @@ int task_1()
    {
        printf("\nInput size of matrix: ");
 
-       if (scanf_s("%d", &matrixsize) != 1) { printf("Wrong type of data!"); return 0; }
-       if (matrixsize <= 0) {rewind(stdin); printf("\nNo such matrix exists");}
-       if (matrixsize == 1) {printf("The determinant of this matrix equals itself"); return 0; }
-       if (matrixsize > 4) { printf("This programm can't calculate this"); return 0; } // fix!
-       else { printf("\nInput matrix with size of %d:\n", matrixsize);}
+       if (scanf_s("%d", &matrixsize) != 1) { printf("Wrong type of data!"); return 0;}
+       else if (matrixsize == 0) { rewind(stdin); printf("\nNo such matrix exists");}
+       else if (matrixsize < 0)  { rewind(stdin); printf("\nNo such matrix exists");}
+       else if (matrixsize == 1) {printf("The determinant of this matrix equals itself"); return 0; }
+       else if (matrixsize > 4)  {printf("This programm can't calculate this"); return 0;} // fix!
+       else {printf("\nInput matrix with size of %d:\n", matrixsize);}
 
        for (line = 0; line < matrixsize; line++)
        {
            for (column = 0; column < matrixsize; column++)
            {
-               int n = scanf_s("%d", &matrix[line][column]);
-               if (n != 1)
+               
+               if (scanf_s("%d", &matrix[line][column]) != 1)
                {
                    b = 0;
                }
            }
        }
+
        if (b == 0)
        {
            printf("\nWrong type of data!");
@@ -42,8 +44,6 @@ int task_1()
 
        if ((matrixsize == 2) && (b != 0))
        {
-
-
            for (line = 0; line < matrixsize; line++)
                for (column = 0; column < matrixsize; column++)
                {
@@ -63,7 +63,6 @@ int task_1()
            printf("\nFor continue press 1, for exit 0 - ");
            scanf_s("%d", &b);
        }
-
 
 
        if ((matrixsize == 3) && (b != 0))
