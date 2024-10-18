@@ -80,9 +80,9 @@ int task_1()
                        sumvt += matrix[line][column];
                    }
 
-                   sumgtr = matrix[0][1] + matrix[1][2] + matrix[2][0] + matrix[1][0] + matrix[2][1] + matrix[0][2];
-                   sumvtr = matrix[1][2] + matrix[2][1] + matrix[0][0] + matrix[1][0] + matrix[0][1] + matrix[2][2];
-                   determ = sumgl + sumgtr - sumvt + sumvtr;
+                   sumgtr = matrix[0][1] * matrix[1][2] * matrix[2][0] + matrix[1][0] * matrix[2][1] * matrix[0][2];
+                   sumvtr = matrix[1][2] * matrix[2][1] * matrix[0][0] + matrix[1][0] * matrix[0][1] * matrix[2][2];
+                   determ = sumgl + sumgtr - sumvt - sumvtr;
                }
 
            printf("Matrix determinant size of %d = %d", matrixsize, determ);
