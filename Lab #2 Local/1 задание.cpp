@@ -96,6 +96,46 @@ int task_1()
 
 }
 
+int task_2()
+
+{
+    char text[1000];
+    int c = 1;
+    while (c)
+    {
+        printf("Input text\n");
+        while ((getchar()) != '\n');
+        fgets(text, sizeof(text), stdin);
+        
+        int length = strlen(text);
+
+        printf("Strings with repeats:\n");
+
+        for (int i = 0; i < length - 1; i++)
+        {
+            if (text[i] == text[i + 1])
+            {
+                int start = i;
+
+                while (text[i] == text[i + 1])
+                {
+                    i++;
+                }
+
+                int end = i;
+
+                for (int j = start; j <= end; j++)
+                {
+                    printf("%c", text[j]);
+                }
+                printf("\n");
+            }
+        }
+    }
+    
+    return 0;
+}
+
 int main()
 {
     
@@ -118,7 +158,11 @@ int main()
         {
             task_1();
         }
-        else
+        else if(ts == 2)
+        {
+            task_2();
+        }
+        else 
         {
             return 0;
         }
