@@ -8,8 +8,8 @@ int task_1()
 {
     int matrixsize, line, column, determ, sumgtr, sumvtr;
     int b = 1;
-    int sumgl = 0;
-    int sumvt = 0;
+    int sumgl = 1;
+    int sumvt = 1;
     int matrix[4][4];
 
    while(b)
@@ -49,12 +49,12 @@ int task_1()
                {
                    if (line == column)
                    {
-                       sumgl += matrix[line][column];
+                       sumgl *= matrix[line][column];
                    }
 
                    if (line + column == matrixsize - 1)
                    {
-                       sumvt += matrix[line][column];
+                       sumvt *= matrix[line][column];
                    }
                }
            determ = sumgl - sumvt;
@@ -72,12 +72,12 @@ int task_1()
                {
                    if (line == column)
                    {
-                       sumgl += matrix[line][column];
+                       sumgl *= matrix[line][column];
                    }
 
                    if (line + column == matrixsize - 1)
                    {
-                       sumvt += matrix[line][column];
+                       sumvt *= matrix[line][column];
                    }
 
                    sumgtr = matrix[0][1] * matrix[1][2] * matrix[2][0] + matrix[1][0] * matrix[2][1] * matrix[0][2];
