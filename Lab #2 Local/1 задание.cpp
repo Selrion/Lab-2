@@ -103,7 +103,7 @@ int task_2()
     int c = 1;
     while (c)
     {
-        printf("Input text\n");
+        printf("\nInput text:\n");
         while ((getchar()) != '\n');
         fgets(text, sizeof(text), stdin);
         
@@ -123,14 +123,41 @@ int task_2()
                 }
 
                 int end = i;
-
+                
                 for (int j = start; j <= end; j++)
                 {
                     printf("%c", text[j]);
                 }
+              
                 printf("\n");
             }
         }
+        
+            
+            
+       
+            printf("\nContinue - 1 \nExit - 0\n \nEnter: ");
+            scanf_s("%d", &c);
+            switch (c)
+            {
+            case 1:
+            {
+                c = 1;
+                break;
+            }
+            case 0:
+            {
+                c = 0;
+                break;
+            }
+            default:
+                printf("Wrong type of data! Exiting...");
+                c = 0;
+                break;
+            }
+
+        
+      
     }
     
     return 0;
@@ -141,7 +168,8 @@ int main()
     
     while (1)
     {
-        rewind(stdin);
+        fflush(stdin);
+        fflush(stdout);
         int ts;
         char tasks[] = 
             "\n"
@@ -154,17 +182,27 @@ int main()
             "\nEnter: ";
         printf("%s",tasks);
         scanf_s("%d",&ts);
-        if (ts == 1) 
+
+        switch(ts)
+        {
+        case 1:
         {
             task_1();
+            break;
         }
-        else if(ts == 2)
+        case 2:
         {
             task_2();
+            break;
         }
-        else 
+        case 0:
         {
             return 0;
+            break;
+        }
+        default:
+            printf("\nWrong type of data!");
+            break;
         }
     }
 }
