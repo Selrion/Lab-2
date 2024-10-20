@@ -1,3 +1,7 @@
 ﻿  1 задание.cpp
-C:\Users\evgex\source\repos\Lab-2\Lab (110,20): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\evgex\source\repos\Lab-2\Lab (53,52): warning C4244: '*=': conversion from 'double' to 'int', possible loss of data
+C:\Users\evgex\source\repos\Lab-2\Lab (58,52): warning C4244: '*=': conversion from 'double' to 'int', possible loss of data
+C:\Users\evgex\source\repos\Lab-2\Lab (76,52): warning C4244: '*=': conversion from 'double' to 'int', possible loss of data
+C:\Users\evgex\source\repos\Lab-2\Lab (81,52): warning C4244: '*=': conversion from 'double' to 'int', possible loss of data
+C:\Users\evgex\source\repos\Lab-2\Lab (112,20): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
   Lab #2 Local.vcxproj -> C:\Users\evgex\Source\Repos\Lab-2\x64\Debug\Lab #2 Local.exe

@@ -6,11 +6,12 @@
 
 int task_1()
 {
-    int matrixsize, line, column, determ, sumgtr, sumvtr;
+    int matrixsize, line, column;
+    double determ, sumgtr, sumvtr;
     int b = 1;
     int sumgl = 1;
     int sumvt = 1;
-    int matrix[4][4];
+    double matrix[4][4];
 
    while(b)
    {
@@ -20,7 +21,7 @@ int task_1()
        else if (matrixsize == 0) { rewind(stdin); printf("\nNo such matrix exists");}
        else if (matrixsize < 0)  { rewind(stdin); printf("\nNo such matrix exists");}
        else if (matrixsize == 1) {printf("The determinant of this matrix equals itself"); return 0; }
-       else if (matrixsize > 4)  {printf("This programm can't calculate this"); return 0;} // fix!
+       else if (matrixsize > 4)  {printf("This programm can't calculate this"); return 0;} 
        else {printf("\nInput matrix with size of %d:\n", matrixsize);}
 
        for (line = 0; line < matrixsize; line++)
@@ -28,7 +29,7 @@ int task_1()
            for (column = 0; column < matrixsize; column++)
            {
                
-               if (scanf_s("%d", &matrix[line][column]) != 1)
+               if (scanf_s("%lf", &matrix[line][column]) != 1)
                {
                    b = 0;
                }
@@ -58,7 +59,7 @@ int task_1()
                    }
                }
            determ = sumgl - sumvt;
-           printf("\nMatrix determinant size of %d = %d", matrixsize, determ);
+           printf("\nMatrix determinant size of %d = %.0lf", matrixsize, determ);
 
            printf("\nFor continue press 1, for exit 0 - ");
            scanf_s("%d", &b);
@@ -85,7 +86,7 @@ int task_1()
                    determ = sumgl + sumgtr - sumvt - sumvtr;
                }
 
-           printf("Matrix determinant size of %d = %d", matrixsize, determ);
+           printf("Matrix determinant size of %d = %.0lf", matrixsize, determ);
 
            printf("\nFor continue - 1, for exit - 0:  ");
            scanf_s("%d", &b);
@@ -104,7 +105,8 @@ int task_2()
     while (c)
     {
         printf("\nInput text:\n");
-        while ((getchar()) != '\n');
+
+        rewind(stdin);
         fgets(text, sizeof(text), stdin);
         
         int length = strlen(text);
@@ -133,8 +135,6 @@ int task_2()
             }
         }
         
-            
-            
        
             printf("\nContinue - 1 \nExit - 0\n \nEnter: ");
             scanf_s("%d", &c);
@@ -156,8 +156,6 @@ int task_2()
                 break;
             }
 
-        
-      
     }
     
     return 0;
