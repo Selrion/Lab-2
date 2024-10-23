@@ -7,19 +7,20 @@
 int task_1()
 {
     int matrixsize, line, column;
+    int** p;
     double determ, sumgtr, sumvtr;
     int b = 1;
-    int sumgl = 1;
-    int sumvt = 1;
+    double sumgl = 1;
+    double sumvt = 1;
     double matrix[4][4];
 
    while(b)
    {
        printf("\nInput size of matrix: ");
 
-       if (scanf_s("%d", &matrixsize) != 1) { printf("Wrong type of data!"); return 0;}
-       else if (matrixsize == 0) { rewind(stdin); printf("\nNo such matrix exists");}
-       else if (matrixsize < 0)  { rewind(stdin); printf("\nNo such matrix exists");}
+       if (scanf_s("%d", &matrixsize) != 1) {printf("Wrong type of data!"); return 0;}
+       else if (matrixsize == 0) {rewind(stdin); printf("\nNo such matrix exists");}
+       else if (matrixsize < 0)  {rewind(stdin); printf("\nNo such matrix exists");}
        else if (matrixsize == 1) {printf("The determinant of this matrix equals itself"); return 0; }
        else if (matrixsize > 4)  {printf("This programm can't calculate this"); return 0;} 
        else {printf("\nInput matrix with size of %d:\n", matrixsize);}
@@ -28,7 +29,6 @@ int task_1()
        {
            for (column = 0; column < matrixsize; column++)
            {
-               
                if (scanf_s("%lf", &matrix[line][column]) != 1)
                {
                    b = 0;
