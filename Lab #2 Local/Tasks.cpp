@@ -7,12 +7,11 @@
 int task_1()
 {
     int matrixsize, line, column;
-    int** p;
     double determ, sumgtr, sumvtr;
     int b = 1;
     double sumgl = 1;
     double sumvt = 1;
-    double matrix[4][4];
+    double matrix[4][4]{};
 
    while(b)
    {
@@ -100,41 +99,44 @@ int task_1()
 int task_2()
 
 {
-    char text[1000];
+    char str[100][100];
+    int symbols = 0;
     int c = 1;
+    int i,j,n;
+    
     while (c)
     {
-        printf("\nInput text:\n");
+        printf("Enter count of strings: ");
 
-        rewind(stdin);
-        fgets(text, sizeof(text), stdin);
+        if (scanf_s("%d", &n) == 0) {rewind(stdin); printf("Wrong type of data!"); return 0; }
+        else if (n == 0) {rewind(stdin); printf("Please input number over 0"); return 0; }
+
         
-        int length = strlen(text);
-
-        printf("Strings with repeats:\n");
-
-        for (int i = 0; i < length - 1; i++)
-        {
-            if (text[i] == text[i + 1])
+            printf("\nEnter strings with enter`s: ");
+            for (i = 0; i < n; i++)
             {
-                int start = i;
-
-                while (text[i] == text[i + 1])
-                {
-                    i++;
-                }
-
-                int end = i;
-                
-                for (int j = start; j <= end; j++)
-                {
-                    printf("%c", text[j]);
-                }
-              
-                printf("\n");
+                scanf_s("%s", &str[i], 100);
             }
-        }
         
+        
+        
+            printf("\nStrings with repeats: ");
+
+            for (i = 0; i < n; i++)
+            {
+                int len = strlen(str[i]);
+                for (j = 0; j < len - 1; j++)
+                {
+                    if (str[i][j] == str[i][j + 1])
+                    {
+                        printf("\n%s\n", str[i]);
+                        break;
+                    }
+                }
+            }
+        
+        
+    
        
             printf("\nContinue - 1 \nExit - 0\n \nEnter: ");
             scanf_s("%d", &c);
