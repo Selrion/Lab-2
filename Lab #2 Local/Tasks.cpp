@@ -11,17 +11,17 @@ int task_1()
     int b = 1;
     double sumgl = 1;
     double sumvt = 1;
-    double matrix[4][4]{};
+    double matrix[4][4];
 
    while(b)
    {
        printf("\nInput size of matrix: ");
 
-       if (scanf_s("%d", &matrixsize) != 1) {printf("Wrong type of data!"); return 0;}
+       if (scanf_s("%d", &matrixsize) == 0) { rewind(stdin); printf("Wrong type of data!"); return 0; }
        else if (matrixsize == 0) {rewind(stdin); printf("\nNo such matrix exists");}
        else if (matrixsize < 0)  {rewind(stdin); printf("\nNo such matrix exists");}
-       else if (matrixsize == 1) {printf("The determinant of this matrix equals itself"); return 0; }
-       else if (matrixsize > 4)  {printf("This programm can't calculate this"); return 0;} 
+       else if (matrixsize == 1) {rewind(stdin); printf("The determinant of this matrix equals itself"); return 0; }
+       else if (matrixsize > 4)  {rewind(stdin); printf("This programm can't calculate this"); return 0;}
        else {printf("\nInput matrix with size of %d:\n", matrixsize);}
 
        for (line = 0; line < matrixsize; line++)
@@ -37,6 +37,7 @@ int task_1()
 
        if (b == 0)
        {
+           rewind(stdin);
            printf("\nWrong type of data!");
        }
 
@@ -60,8 +61,27 @@ int task_1()
            determ = sumgl - sumvt;
            printf("\nMatrix determinant size of %d = %.0lf", matrixsize, determ);
 
-           printf("\nFor continue press 1, for exit 0 - ");
+           printf("\nContinue - 1 \nExit - 0\n \nEnter: ");
            scanf_s("%d", &b);
+
+           switch (b)
+           {
+           case 1:
+           {
+               b = 1;
+               break;
+           }
+           case 0:
+           {
+               b = 0;
+               break;
+           }
+           default:
+               rewind(stdin);
+               printf("Wrong type of data! Exiting...");
+               b = 0;
+               break;
+           }
        }
 
 
@@ -86,9 +106,28 @@ int task_1()
                }
 
            printf("Matrix determinant size of %d = %.0lf", matrixsize, determ);
-
-           printf("\nFor continue - 1, for exit - 0:  ");
+           
+           printf("\nContinue - 1 \nExit - 0\n \nEnter: ");
            scanf_s("%d", &b);
+           
+           switch (b)
+           {
+           case 1:
+           {
+               b = 1;
+               break;
+           }
+           case 0:
+           {
+               b = 0;
+               break;
+           }
+           default:
+               rewind(stdin);
+               printf("Wrong type of data! Exiting...");
+               b = 0;
+               break;
+           }
        }
 
    }
@@ -153,6 +192,7 @@ int task_2()
                 break;
             }
             default:
+                rewind(stdin);
                 printf("Wrong type of data! Exiting...");
                 c = 0;
                 break;
@@ -201,6 +241,7 @@ int main()
             break;
         }
         default:
+            rewind(stdin);
             printf("\nWrong type of data!");
             break;
         }
